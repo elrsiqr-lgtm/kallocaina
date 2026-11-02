@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Kallocaína</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Special+Elite&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="sndbar"><div class="turn" id="turn" hidden role="timer"><span id="turnt"></span><i><b id="turnb"></b></i></div><button class="snd off" id="snd" type="button" aria-pressed="false" aria-label="Ligar música de fundo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z" fill="currentColor"/><path class="wave" d="M16.5 8.5a5 5 0 010 7M19 6a8.5 8.5 0 010 12"/><path class="cross" d="M17 9l5 6M22 9l-5 6"/></svg><span id="sndt">Música: off</span></button>
+<button class="snd" id="fxb" type="button" aria-pressed="true" aria-label="Desligar efeitos sonoros"><span id="fxt">Efeitos: on</span></button><button class="snd" id="exb" type="button" hidden aria-label="Sair do exemplo"><span>Sair</span></button></div>
+<div class="wrap">
+  <header class="hud" id="hud" hidden></header>
+  <div class="seg" id="seg" hidden></div>
+  <main id="app"></main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
