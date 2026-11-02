@@ -24,7 +24,7 @@ Tudo fica numa tabela só, `public.docs`, com as colunas `path` (texto, chave) e
 
 Pendências do banco:
 
-- A segurança está aberta: qualquer jogador logado (mesmo anônimo) pode ler e alterar qualquer documento. Serve para o protótipo; antes de abrir para o público vale restringir por sala e por jogador.
+- A segurança é por sala e por jogador (regras já aplicadas no Supabase): só quem está na sala mexe nela, cada jogador altera apenas os próprios dados e o anfitrião pode alterar os dos outros jogadores.
 - A conexão real com o Supabase ainda não foi testada. A lógica foi testada só com um Supabase simulado.
 - O `supabase-js` é carregado de uma CDN, na versão 2.49.4. Se a chave nova (`sb_publishable_...`) der erro de autenticação, tentar uma versão mais recente.
 
@@ -43,7 +43,7 @@ Pendências do banco:
 
 ## Sessão de exemplo
 
-Partida guiada contra o computador, sem sala real e sem Supabase (usa um banco em memória dentro da página). Tem os dois modos e todos os papéis. Fica no botão "Sessão de exemplo", na tela de entrar numa sessão. Hoje, se a página abrir sem conexão com o banco, o botão "Entrar em uma sessão" fica desabilitado e o exemplo fica inacessível: vale mostrar um botão direto para o exemplo na tela inicial.
+Partida guiada contra o computador, sem sala real e sem Supabase (usa um banco em memória dentro da página). Tem os dois modos e todos os papéis. Fica no botão "Sessão de exemplo", na tela de entrar numa sessão. A tela inicial tem um botão "Sessão de exemplo" que funciona mesmo sem conexão com o banco (nesse caso "Abrir nova sessão" e "Entrar em uma sessão" ficam desabilitados).
 
 O código de "Jogar com IA (Claude)" também existe, mas só funciona dentro de um artefato do Claude (usa a capacidade `sample`); fora dele o botão não aparece.
 
