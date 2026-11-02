@@ -110,7 +110,7 @@ function fetchStore(k){try{return localStorage.getItem(KEY+k)||'';}catch(e){retu
 /* ---------- estado ---------- */
 var DB=null,USER=null,uid=null,canWrite=true,ready=false;
 var code=null,room=null,players={},roomLoaded=false,unsubs=[];
-var opt={mode:'classico',diff:'medio'},owner=false,menuStep='home',testFlag=false;
+var opt={mode:'classico',diff:'medio'},owner=false,menuStep='home',testFlag=false;var demoFrom='join';
 var page=null,loc={},locKey='',after=null,busy=false,notice='',lastSig='',finalizingKey='';
 
 function R(){return room&&room.round;}
@@ -409,7 +409,7 @@ function sMenu(){
       '<p>Jogue uma rodada guiada contra o computador, sem abrir uma sessão e sem outros jogadores. '+(aiOn&&SAMPLE?'A palavra é sorteada e os outros jogadores são controlados pelo Claude: frases, trocas e palpites são de verdade. A primeira jogada pede a sua permissão e cada resposta leva alguns segundos.':'A palavra é sempre a mesma e cada tela explica o que fazer.')+'</p>'+
       (SAMPLE?'<div class="btns"><button class="btn'+(aiOn?' primary':'')+'" data-act="demo-ai" aria-pressed="'+aiOn+'">Jogadores com IA (Claude): '+(aiOn?'ligado':'desligado')+'</button></div>':'')+
       '<div class="btns"><button class="btn primary" data-act="demo-mode" data-v="classico">Exemplo clássico · 5 jogadores</button><button class="btn" data-act="demo-mode" data-v="delator">Exemplo Delator · 6 jogadores</button></div>'+
-      '<div class="btns"><button class="btn" data-act="go-join">Voltar</button></div></section>';
+      '<div class="btns"><button class="btn" data-act="'+(demoFrom==='home'?'menu-back':'go-join')+'">Voltar</button></div></section>';
   }
   if(menuStep==='demo2'){
     var del=demoMode==='delator',rl=del?[['emissor','Emissor','Escreve a frase com pistas da palavra secreta'],['cidadao','Intermediário','Troca duas palavras e passa a mensagem adiante'],['delator','Delator','Finge ajudar, mas entrega palavras ao Estado'],['receptor','Receptor','Tenta decifrar a palavra no final'],['leo','Leo, químico do Estado','Interroga e tenta adivinhar a palavra']]:[['emissor','Emissor','Escreve a frase com pistas da palavra secreta'],['cidadao','Cidadão-soldado do meio','Troca duas palavras e passa a mensagem adiante'],['receptor','Receptor','Tenta decifrar a palavra no final'],['leo','Leo, químico do Estado','Interroga e tenta adivinhar a palavra']];
@@ -432,7 +432,7 @@ function sMenu(){
     '<p class="tagline">Experiência interativa inspirada no universo e nos temas de Kallocaína, de Karin Boye.</p>'+
     '<p class="redact">Toda mensagem será <span class="bar">interceptada</span>. Toda palavra, <span class="bar">examinada</span>. Quem confia, <span class="bar">desaparece</span>.</p>'+
     '<div class="field"><label for="pname">Seu nome</label><input type="text" id="pname" maxlength="16" autocomplete="off" placeholder="Como o Estado vai chamar você"></div>'+
-    '<div class="btns"><button class="btn primary" data-act="go-create" '+(blocked?'disabled':'')+'>Abrir nova sessão</button><button class="btn" data-act="go-join" '+(blocked?'disabled':'')+'>Entrar em uma sessão</button>'+
+    '<div class="btns"><button class="btn primary" data-act="go-create" '+(blocked?'disabled':'')+'>Abrir nova sessão</button><button class="btn" data-act="go-join" '+(blocked?'disabled':'')+'>Entrar em uma sessão</button><button class="btn" data-act="go-demo">Sessão de exemplo</button>'+
     (last&&!offline?'<button class="btn" data-act="rejoin" '+(busy?'disabled':'')+'>Voltar à sessão '+esc(last)+'</button>':'')+'</div>'+
     (msg?'<p class="warn">'+esc(msg)+'</p>':'')+noticeHtml()+
     '<div class="row homelinks"><button class="btn ghost" data-act="rules">Regras</button><button class="btn ghost" data-act="about">Sobre o universo</button></div>'+
@@ -1069,7 +1069,7 @@ var ACT={
   'go-create':function(){goMenu('create',false);},
   'go-join':function(){if(menuStep==='demo'){menuStep='join';notice='';render();window.scrollTo(0,0);}else goMenu('join',false);},
   'go-test':function(){goMenu('create',true);},
-  'go-demo':function(){menuStep='demo';render();window.scrollTo(0,0);},
+  'go-demo':function(){if(menuStep==='home')demoFrom='home';else if(menuStep==='join')demoFrom='join';menuStep='demo';render();window.scrollTo(0,0);},
   'rules-demo':function(){demoMode=rulesMode==='delator'?'delator':'classico';page=null;menuStep='demo2';render();window.scrollTo(0,0);},
   'demo-ai':function(){aiOn=!aiOn;lastSig='';render();},
   'demo-mode':function(b){demoMode=b.getAttribute('data-v')==='delator'?'delator':'classico';menuStep='demo2';render();window.scrollTo(0,0);},
