@@ -465,7 +465,7 @@ var RS={
     '<p class="no2">“uma das <b>profissões</b> que cuida de gente” (usa o nome da categoria)</p>'+
     '<p class="no2">Frase com 11 ou 13 palavras contadas</p></div>'},
  dem:{t:'Emissor',h:
-    '<p>O emissor escreve, em até 90 segundos, uma frase de <b>exatamente 16 palavras</b> que sirva de pista para a palavra secreta, sem dizê-la. Artigos e palavras de até 2 letras (como “de”, “e”, “a”, “os”) não contam: elas ficam fixas e ninguém pode trocá-las nem extraí-las.</p>'+
+    '<p>O emissor escreve, em até 120 segundos, uma frase de <b>exatamente 16 palavras</b> que sirva de pista para a palavra secreta, sem dizê-la. Artigos e palavras de até 2 letras (como “de”, “e”, “a”, “os”) não contam: elas ficam fixas e ninguém pode trocá-las nem extraí-las.</p>'+
     '<div class="ex"><div class="exh">Palavra: Médico · Categoria: Profissões</div>'+wds(RULE_SENT_D)+
     '<p class="ok2">Vale: tem 16 palavras contadas. “de”, “e”, “no” e “os” ficam fixas e não entram na conta. A frase também não cita “médico”.</p></div>'+
     '<div class="ex"><div class="exh">Não vale</div>'+
@@ -473,7 +473,7 @@ var RS={
     '<p class="no2">“uma das <b>profissões</b> que cuida de gente” (usa o nome da categoria)</p>'+
     '<p class="no2">Frase com 15 ou 17 palavras contadas</p></div>'},
  troca:{t:'Troca',h:
-    '<p>Cada intermediário troca <b>exatamente duas palavras</b> da frase, sem apagar a mensagem. Mudar demais atrapalha também os cidadãos-soldados que vêm depois. Cada jogada tem 45 segundos. Se o tempo acabar, duas palavras são apagadas ao acaso e o próximo recebe a mensagem com buracos, mas Leo ainda vê as originais: por isso é sempre melhor trocar. Enquanto espera, você pode dar um palpite sobre a palavra, que só aparece no relatório final.</p>'+
+    '<p>Cada intermediário troca <b>exatamente duas palavras</b> da frase, sem apagar a mensagem. Mudar demais atrapalha também os cidadãos-soldados que vêm depois. Cada jogada tem 60 segundos. Se o tempo acabar, duas palavras são apagadas ao acaso e o próximo recebe a mensagem com buracos, mas Leo ainda vê as originais: por isso é sempre melhor trocar. Enquanto espera, você pode dar um palpite sobre a palavra, que só aparece no relatório final.</p>'+
     '<div class="ex"><div class="exh">Uma troca de 2 palavras</div>'+
     wds(RULE_SWAP,{3:'new',7:'new',1:'red lock',10:'red lock'})+
     '<p>Verde: palavras novas. As vermelhas foram extraídas por Leo e estão travadas.</p></div>'+
@@ -486,17 +486,17 @@ var RS={
     '<div class="ex"><div class="exh">Leo usa o Olho na posição 7</div>'+
     '<div class="swapx"><span class="wd old">doente</span><span class="arr">→</span><span class="wd new">cansado</span></div></div>'},
  deco:{t:'Decodificar',h:
-    '<p>O <b>receptor</b> lê a frase final, depois das trocas, e digita a palavra secreta. Ele tem <b>2 tentativas</b> e 90 segundos. Ao mesmo tempo, Leo faz o último interrogatório e é obrigado a dar um palpite.</p>'+
+    '<p>O <b>receptor</b> lê a frase final, depois das trocas, e digita a palavra secreta. Ele tem <b>2 tentativas</b> e 120 segundos. Ao mesmo tempo, Leo faz o último interrogatório e é obrigado a dar um palpite; ele também tem 120 segundos nessa etapa.</p>'+
     '<div class="ex"><div class="exh">O que o receptor vê</div>'+wds(RULE_SWAP,{3:'new',7:'new'})+
     '<div class="cardw"><small>Receptor digita</small><b>Médico</b></div></div>'+
     '<p>Se Leo acertar antes do último interrogatório, ou se o receptor errar, o <b>Estado vence</b>. Se o receptor acertar e Leo não, os <b>cidadãos-soldados vencem</b>. Se os dois acertarem no último interrogatório, é <b>empate</b>.</p>'},
  decoD:{t:'Decodificar',h:
-    '<p>O <b>receptor</b> lê a frase final, depois das trocas, e digita a palavra secreta. Ele tem <b>2 tentativas</b> e 90 segundos. Ao mesmo tempo, Leo faz o último interrogatório e é obrigado a dar um palpite.</p>'+
+    '<p>O <b>receptor</b> lê a frase final, depois das trocas, e digita a palavra secreta. Ele tem <b>2 tentativas</b> e 120 segundos. Ao mesmo tempo, Leo faz o último interrogatório e é obrigado a dar um palpite; ele também tem 120 segundos nessa etapa.</p>'+
     '<div class="ex"><div class="exh">O que o receptor vê</div>'+wds(RULE_SWAP_D,{3:'new',7:'new'})+
     '<div class="cardw"><small>Receptor digita</small><b>Médico</b></div></div>'+
     '<p>Se Leo acertar antes do último interrogatório, ou se o receptor errar, o <b>Estado vence</b>. Se o receptor acertar e Leo não, os <b>cidadãos-soldados vencem</b>. Se os dois acertarem no último interrogatório, é <b>empate</b>.</p>'},
  trocaD:{t:'Troca',h:
-    '<p>Cada intermediário troca <b>exatamente duas palavras</b> da frase, sem apagar a mensagem. Mudar demais atrapalha também os cidadãos-soldados que vêm depois. Cada jogada tem 45 segundos. Se o tempo acabar, duas palavras são apagadas ao acaso e o próximo recebe a mensagem com buracos, mas Leo ainda vê as originais: por isso é sempre melhor trocar. Enquanto espera, você pode dar um palpite sobre a palavra, que só aparece no relatório final.</p>'+
+    '<p>Cada intermediário troca <b>exatamente duas palavras</b> da frase, sem apagar a mensagem. Mudar demais atrapalha também os cidadãos-soldados que vêm depois. Cada jogada tem 60 segundos. Se o tempo acabar, duas palavras são apagadas ao acaso e o próximo recebe a mensagem com buracos, mas Leo ainda vê as originais: por isso é sempre melhor trocar. Enquanto espera, você pode dar um palpite sobre a palavra, que só aparece no relatório final.</p>'+
     '<div class="ex"><div class="exh">Uma troca de 2 palavras</div>'+
     wds(RULE_SWAP_D,{3:'new',7:'new',1:'red lock',10:'red lock'})+
     '<p>Verde: palavras novas. As vermelhas foram extraídas por Leo e estão travadas.</p></div>'+
@@ -1688,7 +1688,7 @@ function hsTick(){
   var k=room&&room.status+'|'+room.roundNo+'|'+(room.status==='play'&&r?r.step+'|'+(r.reveals?Object.keys(r.reveals).length:0)+'|'+(r.guesses?Object.keys(r.guesses).length:0):'')+'|'+pend.join(',');
   if(k!==hsKey){hsKey=k;hsStart=Date.now();}
   var el=$('#hskip');if(!el)return;
-  var thr=room.status==='play'?((r.step===0||r.step===cfg().leos)?105:60):60;
+  var thr=room.status==='play'?(r.step===0?(isDel()?135:105):(r.step===cfg().leos?135:75)):60;
   if(room.test)thr=12;
   el.hidden=(Date.now()-hsStart)<thr*1000;
 }
@@ -1728,7 +1728,7 @@ function turnPaint(){
 function turnWatch(){
   var k=turnActive();
   if(!k){if(turnKey){turnKey='';clearInterval(turnTick);turnTick=null;}turnShow(false);return;}
-  if(k!==turnKey){turnKey=k;if(k.indexOf('prep')!==0)SND.ping();turnDur=(room.status==='play'&&(R().step===0||partsOf(uid)[0]==='dec'))?90000:TURN_MS;turnEnd=Date.now()+turnDur;clearInterval(turnTick);turnTick=setInterval(turnPaint,250);turnPaint();}
+  if(k!==turnKey){turnKey=k;if(k.indexOf('prep')!==0)SND.ping();turnDur=room.status==='play'?(R().step===0?(isDel()?120000:90000):(R().step===cfg().leos?120000:60000)):TURN_MS;turnEnd=Date.now()+turnDur;clearInterval(turnTick);turnTick=setInterval(turnPaint,250);turnPaint();}
   turnShow(!!turnTick);
 }
 
