@@ -1971,6 +1971,9 @@ render();
       DB=await c.use('db');USER=await c.use('user');
       try{SAMPLE=await c.use('sample');}catch(e2){SAMPLE=null;}
       if(USER){uid=await USER.id();owner=!!(USER.isOwner&&USER.isOwner());var cw=await USER.can('data.write');canWrite=(cw!==false);}
+    }else if(window.KalloSupabase&&window.KALLO_CONFIG){
+      var sbc=await window.KalloSupabase.connect(window.KALLO_CONFIG);
+      DB=sbc.DB;uid=sbc.uid;canWrite=true;
     }
   }catch(e){DB=null;}
   ready=true;
