@@ -636,3 +636,27 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:35;bac
 body.nofx .mol-layer{opacity:0;visibility:hidden;transition:opacity .4s ease,visibility 0s .4s}
 body.nofx .mol,body.nofx .mol *{animation-play-state:paused}
 @media (prefers-reduced-motion:reduce){.mol,.mol .rot,.mol .drift,.mol .b2{animation:none!important}.mol .h{animation-duration:7s}}
+
+/* ---------- tela inicial: cabe inteira na tela (sem rolar) e com hierarquia clara ----------
+   Tamanhos acompanham a altura da tela (dvh); o que é secundário (ticker, frase de apoio, selos) fica menor e mais discreto. */
+body:has(.menu.home){padding-block:4px 8px}
+.wrap:has(.menu.home){padding-bottom:0}
+.menu.home{padding-top:0;gap:14px;gap:clamp(6px,1.6dvh,16px)}
+.menu.home .warn:empty{display:none}
+.menu.home .ticker{font-size:11px;padding:4px 0}
+.menu.home h1{font-size:clamp(44px,16vw,112px);font-size:clamp(40px,min(16vw,11dvh),112px)}
+.menu.home .sub{font-size:clamp(16px,4.6vw,28px);font-size:clamp(15px,min(4.6vw,3.4dvh),28px)}
+.menu.home .tagline{font-size:12px;margin:0}
+.menu.home .redact{font-size:14px;line-height:1.4;color:var(--metal-dim);font-size:clamp(12px,2.1dvh,15px)}
+.menu.home .field{gap:3px}
+.menu.home .field label{font-size:11px}
+.menu.home .field input{padding:9px 12px;padding:clamp(8px,1.4dvh,11px) 12px}
+.menu.home .btns{gap:8px;gap:clamp(6px,1.2dvh,12px)}
+.menu.home .btns>.btn{padding:11px 16px;padding:clamp(9px,1.5dvh,13px) 16px;font-size:14px}
+.menu.home .homelinks .btn.ghost{min-height:34px;padding:6px 10px}
+.menu.home .badges{margin-top:0;gap:6px;justify-content:center}
+.menu.home .badges>div{flex:0 1 auto;flex-direction:row;gap:6px;padding:5px 10px;border-color:var(--line);color:var(--metal-dim);border-radius:3px}
+.menu.home .badges b{font-size:15px;margin:0;color:var(--metal)}
+.menu.home .badges span{font-size:10px;opacity:.9}
+@media (max-height:620px){.menu.home .ticker{display:none}}
+@media (max-height:600px){.menu.home .tagline{display:none}}
