@@ -406,7 +406,7 @@ function sMenu(){
   }
   if(menuStep==='demo'){
     return '<section class="menu"><p class="kicker">Aprenda jogando</p><h2 class="sub2">Sessão de exemplo</h2>'+
-      '<p>Jogue uma rodada guiada contra o computador, sem abrir uma sessão e sem outros jogadores. '+(aiOn&&SAMPLE?'A palavra é sorteada e os outros jogadores são controlados pelo Claude: frases, trocas e palpites são de verdade. A primeira jogada pede a sua permissão e cada resposta leva alguns segundos.':'A palavra é sempre a mesma e cada tela explica o que fazer.')+'</p>'+
+      '<p>Uma rodada de exemplo para aprender o jogo, sem abrir uma sessão e sem outros jogadores. '+(aiOn&&SAMPLE?'A palavra é sorteada e os outros jogadores são controlados pelo Claude: frases, trocas e palpites são de verdade. A primeira jogada pede a sua permissão e cada resposta leva alguns segundos.':'Os outros jogadores são apenas simulados: não pensam nem decidem de verdade. A palavra é sempre a mesma e cada tela explica o que fazer.')+'</p>'+
       (SAMPLE?'<div class="btns"><button class="btn'+(aiOn?' primary':'')+'" data-act="demo-ai" aria-pressed="'+aiOn+'">Jogadores com IA (Claude): '+(aiOn?'ligado':'desligado')+'</button></div>':'')+
       '<div class="btns"><button class="btn primary" data-act="demo-mode" data-v="classico">Exemplo clássico · 5 jogadores</button><button class="btn" data-act="demo-mode" data-v="delator">Exemplo Delator · 6 jogadores</button></div>'+
       '<div class="btns"><button class="btn" data-act="'+(demoFrom==='home'?'menu-back':'go-join')+'">Voltar</button></div></section>';
