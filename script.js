@@ -1885,7 +1885,7 @@ var SND={
 };
 (function(){
   var b=$('#fxb'),t=$('#fxt');
-  function paint(){b.classList.toggle('off',!fx);b.setAttribute('aria-pressed',fx?'true':'false');b.setAttribute('aria-label',fx?'Desligar efeitos sonoros':'Ligar efeitos sonoros');t.innerHTML='<span class="lg">Efeitos</span><span class="sm">FX</span>: '+(fx?'on':'off');}
+  function paint(){document.body.classList.toggle('nofx',!fx);b.classList.toggle('off',!fx);b.setAttribute('aria-pressed',fx?'true':'false');b.setAttribute('aria-label',fx?'Desligar efeitos sonoros':'Ligar efeitos sonoros');t.innerHTML='<span class="lg">Efeitos</span><span class="sm">FX</span>: '+(fx?'on':'off');}
   b.addEventListener('click',function(e){e.stopPropagation();fx=!fx;paint();if(fx){ac();SND.click();}});
   document.addEventListener('pointerdown',function(){ac();},{once:true});
   paint();
