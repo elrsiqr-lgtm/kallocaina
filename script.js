@@ -1938,7 +1938,7 @@ var SND={
     '<div class="ibody"><h1 class="itt">KALLOCAÍNA</h1><p class="isub">Comunicação Proibida</p>'+
     '<p class="iepi">“Acreditei que aquela sessão confirmava minhas suspeitas. A verdade, porém, nem sempre se apresenta da maneira que esperamos.”<span>Leo Kall</span></p></div>'+
     '<p class="ilab">Abrindo os olhos da Polícia</p>';
-  document.body.appendChild(el);
+  document.body.appendChild(el);document.documentElement.classList.add('introlock');
   var eyePending=false,t0=Date.now(),opened=false,done=false,MIN=REDUCE?400:2400;
   function open(){
     opened=true;el.classList.add('open');
@@ -1949,7 +1949,7 @@ var SND={
     if(!opened||done)return;done=true;
     try{if(window.kStartMusic)window.kStartMusic();}catch(e){}
     try{if(eyePending){eyePending=false;SND.eye();}}catch(e){}
-    el.classList.add('out');setTimeout(function(){if(el.parentNode)el.parentNode.removeChild(el);},700);
+    el.classList.add('out');setTimeout(function(){if(el.parentNode)el.parentNode.removeChild(el);document.documentElement.classList.remove('introlock');},700);
   }
   el.addEventListener('click',enter);
   el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')enter();});
